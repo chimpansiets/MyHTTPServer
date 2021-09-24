@@ -1,5 +1,9 @@
 using namespace std;
 
+class Location {
+    
+};
+
 class MainConfig {
 
 };
@@ -12,4 +16,5 @@ class ServerConfig {
         string root;
         vector<string> error_pages;
         double max_client_body_size_mb;
+        vector<Location> routes;
 };
