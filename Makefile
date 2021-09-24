@@ -4,7 +4,7 @@ _CFILES = main.c
 CFILES = $(addprefix source/, $(_CFILES))
 OFILES= $(subst .c,.o, $(CFILES))
 _DEPS= myhttp.h
-DEPS= $(addprefix headers/, $(_DEPS))
+DEPS= $(addprefix includes/, $(_DEPS))
 
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)

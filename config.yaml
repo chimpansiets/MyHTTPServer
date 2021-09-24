@@ -1,0 +1,9 @@
+- server1:
+    name: My Server Name
+    host: 127.0.0.1
+    port: 80
+    root: some/path/
+    - error_pages:
+      e404: some/location/error_404.html
+      e500: some/location/error_5XX.html
+    client_max_body_size: 100M;
