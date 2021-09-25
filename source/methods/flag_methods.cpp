@@ -2,7 +2,9 @@
 #define C_FLAG 1
 #define E_FLAG 2
 
-Flags::void print_flags() {
+using namespace std;
+
+void Flags::print_flags() {
     cout << "Flags enabled: \n";
     if (c) {
         cout << "c enabled: " << c_file << "\n";
@@ -18,7 +20,7 @@ Flags::void print_flags() {
     }
 }
 
-Flags::void store_file(string filepath, int type_of_flag) {
+void Flags::store_file(string filepath, int type_of_flag) {
     if (type_of_flag == C_FLAG) {
         c_file = filepath;
     } else if (type_of_flag == E_FLAG) {
@@ -26,7 +28,7 @@ Flags::void store_file(string filepath, int type_of_flag) {
     }
 }
 
-Flags::void parse_flags(int argc, char **argv) {
+void Flags::parse_flags(int argc, char **argv) {
     int flag_received = 0;
 
     for (int i = 0; i < argc; i++) {
@@ -39,9 +41,9 @@ Flags::void parse_flags(int argc, char **argv) {
         }
     }
     print_flags();
-};
+}
 
-Flags::int store_flag(char *flag) {
+int Flags::store_flag(char *flag) {
     int len_flag = strlen(flag);
 
     if (len_flag != 2) {
@@ -59,7 +61,7 @@ Flags::int store_flag(char *flag) {
                 h = 1;
             case 't':
                 t = 1;
-            return (0);
         }
+        return (0);
     }
 }

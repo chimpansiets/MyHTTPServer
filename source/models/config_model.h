@@ -1,4 +1,5 @@
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
@@ -22,4 +23,6 @@ class ServerConfig {
 class MainConfig {
     public:
         vector<ServerConfig> servers;
+
+        void parse_config(string config_filepath);
 };

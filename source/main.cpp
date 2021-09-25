@@ -1,7 +1,4 @@
-#include <iostream>
-#include "models/flag_model.h"
-#include "models/config_model.h"
-#include "setup.cpp"
+#include "myhttp.h"
 
 int main(int argc, char **argv) {
     Flags flags;

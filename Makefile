@@ -1,6 +1,6 @@
 CC=g++
 CFLAGS = -std=c++98 -pedantic
-_CFILES=main.cpp setup.cpp methods/flag_methods.cpp
+_CFILES=main.cpp setup.cpp methods/flag_methods.cpp methods/config_methods.cpp
 CFILES=$(addprefix source/, $(_CFILES))
 OFILES=$(subst .cpp,.o, $(CFILES))
 INCLUDES=source/models/
