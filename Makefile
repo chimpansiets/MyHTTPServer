@@ -1,13 +1,9 @@
 CC=g++
-CFLAGS=-std=c++98 -pedantic
-_CFILES = main.c
-CFILES = $(addprefix source/, $(_CFILES))
-OFILES= $(subst .c,.o, $(CFILES))
-_DEPS= myhttp.h
-DEPS= $(addprefix includes/, $(_DEPS))
-
-%.o: %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+CFLAGS = -std=c++98 -pedantic
+_CFILES=main.cpp setup.cpp methods/flag_methods.cpp
+CFILES=$(addprefix source/, $(_CFILES))
+OFILES=$(subst .cpp,.o, $(CFILES))
+INCLUDES=source/models/
 
 all: $(OFILES)
 	$(CC) -o httpserver $(OFILES)
@@ -18,6 +14,9 @@ fclean:
 	rm httpserver
 
 re: fclean all
+
+%.o: %.cpp
+	$(CC) -c -o $@ $< $(CFLAGS) -I$(INCLUDES)
 
 print-%:
 	@echo $* = $($*)
